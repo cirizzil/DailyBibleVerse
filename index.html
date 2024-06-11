@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Bible Verse</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Daily Bible Verse</h1>
+    <div class="verse-container">
+      <div id="newQuote"></div>
+      <div class="button-container">
+        <button id="newVerseBtn">New Verse</button>
+        <div id="spinner" style="display:none;">
+          <img src="https://i.gifer.com/Vfv.gif" alt="Loading..." width="100" height="100"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#newVerseBtn").click(function(){
+        getVerse();
+      });
+  
+      var getVerse = function() {
+        $("#spinner").show();
+        $.ajax({
+          url: "https://labs.bible.org/api/?passage=random&type=json&callback=myCallback", 
+          crossDomain: true,
+          dataType: 'jsonp',
+          success: function(result){
+            $("#newQuote").html('<p class="verse-text"><strong>'+
+                                result[0].bookname+
+                                ' ' + result[0].chapter +
+                                ':' + result[0].verse +
+                                '</strong> ' +
+                                result[0].text +
+                                '</p>');
+            $("#spinner").hide();
+          }
+        });
+      }
+      
+      getVerse();
+    });
+  </script>
+</body>
+</html>
