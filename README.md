@@ -93,3 +93,9 @@ Faced Cross-Origin Resource Sharing (CORS) issues where the browser blocked API 
 ### Solution
 
 Eventually found an API without CORS restrictions, which allowed the project to proceed smoothly and achieve its intended functionality.
+
+### Demo
+![image](https://github.com/CBJdereal/DailyBibleVerse/assets/64748236/d8b42370-534e-4a33-b6b2-7e0c59ed6480)
+![image](https://github.com/CBJdereal/DailyBibleVerse/assets/64748236/b6c6fc75-f7a2-40af-999c-276a2ab915b7)
+
+
