@@ -1,4 +1,4 @@
-# Random Bible Verse
+# Daily Bible Verse
 
 ## Overview
 
